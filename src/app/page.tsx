@@ -75,11 +75,13 @@ export default function Home() {
           <div className="absolute left-0 top-[467px] w-full">
             <SkillsMarquee />
           </div>
+        </div>
 
-          <div className="pointer-events-none absolute left-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-r from-[#080808] to-[rgba(8,8,8,0)]" />
-          <div className="pointer-events-none absolute right-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-l from-[#080808] to-[rgba(8,8,8,0)]" />
+        <div className="pointer-events-none absolute left-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-r from-[#080808] to-[rgba(8,8,8,0)]" />
+        <div className="pointer-events-none absolute right-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-l from-[#080808] to-[rgba(8,8,8,0)]" />
 
-          <div className="absolute left-[98px] top-[140px] flex flex-col items-start gap-[20px] whitespace-nowrap text-white">
+        <div className="pointer-events-none absolute inset-0 mx-auto h-full w-full max-w-[1440px]">
+          <div className="pointer-events-auto absolute left-[98px] top-[140px] flex flex-col items-start gap-[20px] whitespace-nowrap text-white">
             <p className="font-archivo-expanded text-[40px] font-bold">SKILLS</p>
             <div className="font-roboto text-[16px] tracking-[-0.32px]" style={{ fontVariationSettings: '"wdth" 100' }}>
               <p>Lorem ipsum dolor sit amet, consectetuer</p>
