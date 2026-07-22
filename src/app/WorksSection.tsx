@@ -30,7 +30,8 @@ export default function WorksSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 12 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="flex items-center justify-center whitespace-nowrap rounded-[40px] border border-[#6c97e3] bg-gradient-to-r from-[rgba(156,192,255,0.3)] to-[rgba(101,155,246,0.3)] px-[20px] py-[8px] font-roboto text-[16px] font-medium text-white"
+              className="flex items-center justify-center whitespace-nowrap rounded-[40px] border border-[#6c97e3] px-[20px] py-[8px] font-roboto text-[16px] font-medium text-white"
+              style={{ backgroundImage: "linear-gradient(to right, rgba(156,192,255,0.3), rgba(101,155,246,0.3))" }}
             >
               View Project {projectLabel}
             </motion.button>

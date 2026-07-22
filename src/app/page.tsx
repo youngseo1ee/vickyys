@@ -24,7 +24,10 @@ export default function Home() {
   return (
     <div className="relative flex w-full flex-col items-start bg-[#080808]">
       <header className="fixed inset-x-0 top-0 z-50 flex h-[80px] w-full items-center justify-between bg-white/10 px-[98px] backdrop-blur-sm">
-        <p className="bg-gradient-to-r from-white to-[#bcd3fb] bg-clip-text font-archivo text-[16px] font-bold text-transparent">
+        <p
+          className="bg-clip-text font-archivo text-[16px] font-bold text-transparent"
+          style={{ backgroundImage: "linear-gradient(to right, #ffffff, #bcd3fb)" }}
+        >
           YOUNGSEOLEE
         </p>
         <nav className="flex items-center gap-[28px]">
@@ -51,7 +54,10 @@ export default function Home() {
             >
               Hello, I&rsquo;m Youngseo Lee
             </p>
-            <div className="bg-gradient-to-r from-white via-[#bcd3fb] to-white bg-clip-text text-center font-archivo-expanded text-[44px] font-bold tracking-[-0.44px] text-transparent">
+            <div
+              className="bg-clip-text text-center font-archivo-expanded text-[44px] font-bold tracking-[-0.44px] text-transparent"
+              style={{ backgroundImage: "linear-gradient(to right, #ffffff, #bcd3fb, #ffffff)" }}
+            >
               <p>I&rsquo;m a designer who finds overlooked</p>
               <p>problems in everyday life</p>
             </div>
@@ -77,8 +83,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute left-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-r from-[#080808] to-[rgba(8,8,8,0)]" />
-        <div className="pointer-events-none absolute right-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-l from-[#080808] to-[rgba(8,8,8,0)]" />
+        <div
+          className="pointer-events-none absolute left-0 top-[3px] h-[800px] w-[313px]"
+          style={{ backgroundImage: "linear-gradient(to right, #080808, rgba(8,8,8,0))" }}
+        />
+        <div
+          className="pointer-events-none absolute right-0 top-[3px] h-[800px] w-[313px]"
+          style={{ backgroundImage: "linear-gradient(to left, #080808, rgba(8,8,8,0))" }}
+        />
 
         <div className="pointer-events-none absolute inset-0 mx-auto h-full w-full max-w-[1440px]">
           <div className="pointer-events-auto absolute left-[98px] top-[140px] flex flex-col items-start gap-[20px] whitespace-nowrap text-white">
@@ -125,7 +137,8 @@ export default function Home() {
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center whitespace-nowrap rounded-[40px] border border-[#6c97e3]/50 bg-gradient-to-r from-[rgba(156,192,255,0.2)] to-[rgba(101,155,246,0.2)] px-[20px] py-[8px] font-roboto text-[16px] font-medium text-white/50"
+              className="flex items-center justify-center whitespace-nowrap rounded-[40px] border border-[#6c97e3]/50 px-[20px] py-[8px] font-roboto text-[16px] font-medium text-white/50"
+              style={{ backgroundImage: "linear-gradient(to right, rgba(156,192,255,0.2), rgba(101,155,246,0.2))" }}
             >
               Send
             </button>

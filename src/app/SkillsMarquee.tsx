@@ -193,7 +193,10 @@ export default function SkillsMarquee() {
             >
               <div className="flex items-center gap-[14px]">
                 <SkillBadge badge={expandedSkill.badge} bg={expandedSkill.bg} size="lg" />
-                <p className="whitespace-nowrap bg-gradient-to-r from-white to-[#b1b8be] bg-clip-text font-roboto text-[28px] font-semibold text-transparent">
+                <p
+                  className="whitespace-nowrap bg-clip-text font-roboto text-[28px] font-semibold text-transparent"
+                  style={{ backgroundImage: "linear-gradient(to right, #ffffff, #b1b8be)" }}
+                >
                   {expandedSkill.label}
                 </p>
               </div>

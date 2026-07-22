@@ -21,7 +21,10 @@ export default function HeroCtaButton() {
             : { duration: 3.5, repeat: Infinity, ease: "linear" }
         }
       />
-      <div className="relative flex items-center justify-center rounded-[40px] bg-[#080808] bg-gradient-to-r from-[rgba(156,192,255,0.3)] to-[rgba(101,155,246,0.3)] px-[40px] py-[12px]">
+      <div
+        className="relative flex items-center justify-center rounded-[40px] bg-[#080808] px-[40px] py-[12px]"
+        style={{ backgroundImage: "linear-gradient(to right, rgba(156,192,255,0.3), rgba(101,155,246,0.3))" }}
+      >
         <p className="whitespace-nowrap font-roboto text-[18px] font-medium text-white/90">
           Know Me More
         </p>
