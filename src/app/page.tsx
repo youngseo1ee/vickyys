@@ -84,15 +84,15 @@ export default function Home() {
         </div>
 
         <div
-          className="pointer-events-none absolute left-0 top-[3px] h-[800px] w-[313px]"
+          className="pointer-events-none absolute left-0 top-[3px] z-10 h-[800px] w-[313px]"
           style={{ backgroundImage: "linear-gradient(to right, #080808, rgba(8,8,8,0))" }}
         />
         <div
-          className="pointer-events-none absolute right-0 top-[3px] h-[800px] w-[313px]"
+          className="pointer-events-none absolute right-0 top-[3px] z-10 h-[800px] w-[313px]"
           style={{ backgroundImage: "linear-gradient(to left, #080808, rgba(8,8,8,0))" }}
         />
 
-        <div className="pointer-events-none absolute inset-0 mx-auto h-full w-full max-w-[1440px]">
+        <div className="pointer-events-none absolute inset-0 z-20 mx-auto h-full w-full max-w-[1440px]">
           <div className="pointer-events-auto absolute left-[98px] top-[140px] flex flex-col items-start gap-[20px] whitespace-nowrap text-white">
             <p className="font-archivo-expanded text-[40px] font-bold">SKILLS</p>
             <div className="font-roboto text-[16px] tracking-[-0.32px]" style={{ fontVariationSettings: '"wdth" 100' }}>
@@ -113,7 +113,7 @@ export default function Home() {
         <WorksSection />
       </section>
 
-      <section id="contact" className="relative flex h-[900px] w-full snap-start scroll-mt-[80px] flex-col items-center justify-center overflow-clip bg-[#080808]">
+      <section id="contact" className="relative flex h-[900px] w-full scroll-mt-[80px] flex-col items-center justify-center overflow-clip bg-[#080808]">
         <div className="flex flex-col items-start gap-[60px]">
           <div className="flex w-full flex-col items-start gap-[20px] whitespace-nowrap text-white">
             <p className="font-archivo-expanded text-[40px] font-bold">CONTACT</p>
