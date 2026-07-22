@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="antialiased">
+    <html lang="ko" className="antialiased snap-y snap-proximity">
       <body>{children}</body>
     </html>
   );

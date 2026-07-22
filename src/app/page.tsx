@@ -1,190 +1,159 @@
 import Image from "next/image";
+import AboutTimeline from "./AboutTimeline";
+import SkillsMarquee from "./SkillsMarquee";
+import WorksSection from "./WorksSection";
+import ScrollIndicator from "./ScrollIndicator";
+import HeroCtaButton from "./HeroCtaButton";
 
-const heroBg = "/images/hero-bg.png";
-const project1 = "/images/project-1.png";
-const project2 = "/images/project-2.png";
-const project3 = "/images/project-3.png";
-const project4 = "/images/project-4.png";
-const timelineLine = "/images/timeline-line.svg";
-const timelineDot = "/images/timeline-dot.svg";
-const searchIcon = "/images/search-icon.svg";
-const socialIcon1 = "/images/social-icon-1.svg";
-const socialIcon2 = "/images/social-icon-2.svg";
+const glowSkills = "/images/glow-skills.svg";
+const glowWorks = "/images/glow-works-v2.svg";
+const searchIcon = "/images/search-icon-dark.svg";
+const socialIcon1 = "/images/social-icon-1-dark.svg";
+const socialIcon2 = "/images/social-icon-2-dark.svg";
 
-const goals = [
-  { year: "2026", label: "수강신청 잘 하기" },
-  { year: "2026", label: "SOMESAY 프로젝트 열심히 하기" },
-  { year: "2026", label: "3학년 수업 열심히 듣기" },
-  { year: "2026", label: "무사히 졸업하기" },
-  { year: "2027", label: "좋은 대기업 취업하기" },
+const navItems = [
+  { number: "01", label: "ABOUT ME", href: "#about" },
+  { number: "02", label: "SKILLS", href: "#skills" },
+  { number: "03", label: "WORKS", href: "#works" },
+  { number: "04", label: "CONTACT", href: "#contact" },
 ];
 
-const projects = [project1, project2, project3, project4];
+const footerLinks = ["이영서 소개", "이영서 가이드라인", "이영서 회칙"];
 
 export default function Home() {
   return (
-    <div className="relative flex w-full flex-col items-start bg-white">
-      <header className="absolute left-0 top-0 z-10 flex w-full items-center justify-between bg-[rgba(144,183,249,0.9)] px-[98px] py-[20px]">
-        <p className="font-pretendard text-[20px] font-bold text-[#0d5fe7]">
-          YOUNGSEO
+    <div className="relative flex w-full flex-col items-start bg-[#080808]">
+      <header className="fixed inset-x-0 top-0 z-50 flex h-[80px] w-full items-center justify-between bg-white/10 px-[98px] backdrop-blur-sm">
+        <p className="bg-gradient-to-r from-white to-[#bcd3fb] bg-clip-text font-archivo text-[16px] font-bold text-transparent">
+          YOUNGSEOLEE
         </p>
-        <div className="flex items-center gap-[40px]">
-          <p className="font-pretendard text-[18px] font-semibold text-[#464c53]">
-            더보기1
-          </p>
-          <p className="font-pretendard text-[18px] font-semibold text-[#464c53]">
-            더보기2
-          </p>
-          <div className="flex items-center gap-[12px]">
-            <div className="h-[28px] w-[280px] rounded-[20px] bg-white" />
-            <img alt="검색" src={searchIcon} className="block size-[24px]" />
-          </div>
-        </div>
+        <nav className="flex items-center gap-[28px]">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="flex items-center gap-[8px] whitespace-nowrap font-roboto font-medium"
+            >
+              <span className="text-[12px] text-white/50">{item.number}</span>
+              <span className="text-[16px] text-white/90">{item.label}</span>
+            </a>
+          ))}
+          <img alt="검색" src={searchIcon} className="block size-[24px]" />
+        </nav>
       </header>
 
-      <section className="relative flex w-full flex-col items-center gap-[80px] overflow-clip bg-[#bcd3fb] pb-[180px] pt-[260px]">
-        <div className="absolute inset-x-0 top-[-181px] h-[1075px]">
-          <Image
-            alt=""
-            src={heroBg}
-            fill
-            sizes="100vw"
-            loading="eager"
-            className="pointer-events-none object-cover opacity-15"
-          />
-        </div>
-        <div className="relative flex w-[754px] flex-col items-start gap-[60px]">
-          <div className="flex flex-col items-start gap-[12px] whitespace-nowrap text-[#080808]">
-            <p className="font-pretendard text-[54px] font-bold leading-[1.55] tracking-[-1.08px]">
-              안녕하세요 제 이름은 이영서입니다
-            </p>
-            <div className="font-pretendard text-[18px] font-semibold leading-[1.55] tracking-[-0.36px]">
-              <p>일상 속 작은 불편을 세심하게 발견하고, 더 나은 경험으로 바꾸는</p>
-              <p>우주 최고 멋쟁이 디자이너가 되겠습니다.</p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center rounded-[40px] bg-[#0d5fe7] px-[40px] py-[12px]">
-            <p className="whitespace-nowrap font-pretendard text-[18px] font-semibold text-white tracking-[-0.36px]">
-              영서 더 알아보기
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="flex w-full flex-col items-center gap-[80px] py-[140px]">
-        <div className="flex w-[713px] flex-col items-center gap-[40px]">
-          <p className="whitespace-nowrap font-pretendard text-[40px] font-bold text-[#0d5fe7]">
-            ABOUT ME
-          </p>
-          <div className="w-full text-center font-pretendard text-[16px] font-medium leading-[1.55] tracking-[-0.32px] text-[#080808]">
-            <p>
-              작은 불편이나 어색한 문구를 그냥 지나치지 못하는 편이에요.
-              <br aria-hidden />
-              앱이나 웹사이트를 사용할 때도 &ldquo;왜 이렇게 만들었을까?&rdquo;, &ldquo;어떻게 바꾸면 더 편할까?&rdquo;를 자연스럽게 생각합니다.
-            </p>
-            <p>저는 다른 사람들의 피드백을 빠르게 반영하며 디테일을 다듬는 것을 좋아해요.</p>
-          </div>
-        </div>
-        <div className="flex w-full items-center justify-center">
-          {["2003년생", "홍익대학교", "시각디자인과"].map((label, i) => (
-            <div
-              key={label}
-              className={`flex size-[320px] shrink-0 items-center justify-center rounded-full border-[1.2px] border-solid border-[#bcd3fb] ${
-                i < 2 ? "mr-[-40px]" : ""
-              }`}
+      <section className="relative flex h-[900px] w-full snap-start flex-col items-center justify-center overflow-clip bg-[#080808] scroll-mt-[80px]">
+        <div className="relative flex flex-col items-center gap-[60px]" style={{ transform: "translateY(30.5px)" }}>
+          <div className="flex flex-col items-center gap-[20px] whitespace-nowrap">
+            <p
+              className="font-roboto text-[24px] font-semibold text-white"
+              style={{ fontVariationSettings: '"wdth" 100' }}
             >
-              <p className="whitespace-nowrap font-pretendard text-[22px] font-bold text-[#4285f4]">
-                {label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="flex w-full flex-col items-center gap-[80px] bg-[#e2ecfd] py-[140px]">
-        <div className="flex w-[713px] flex-col items-center gap-[48px]">
-          <p className="whitespace-nowrap font-pretendard text-[40px] font-bold text-[#0d5fe7]">
-            PROJECT
-          </p>
-          <div className="w-full text-center font-pretendard text-[16px] font-medium leading-[1.55] tracking-[-0.32px] text-[#080808]">
-            <p>
-              우와 저는 정말 작은 불편이나 어색한 문구를 그냥 지나치지 못하는 편이에요.
-              <br aria-hidden />
-              앱이나 웹사이트를 사용할 때도 &ldquo;왜 이렇게 만들었을까?&rdquo;, &ldquo;어떻게 바꾸면 더 편할까?&rdquo;를 자연스럽게 생각합니다.
+              Hello, I&rsquo;m Youngseo Lee
             </p>
-            <p>피드백을 빠르게 반영하며 디테일을 다듬는 것을 좋아해요.</p>
+            <div className="bg-gradient-to-r from-white via-[#bcd3fb] to-white bg-clip-text text-center font-archivo-expanded text-[44px] font-bold tracking-[-0.44px] text-transparent">
+              <p>I&rsquo;m a designer who finds overlooked</p>
+              <p>problems in everyday life</p>
+            </div>
           </div>
+          <HeroCtaButton />
         </div>
-        <div className="flex w-full items-center justify-center px-[98px]">
-          <div className="flex items-center gap-[20px]">
-            {projects.map((src, i) => (
-              <div key={src} className="relative size-[360px] shrink-0 rounded-[20px]">
-                <Image
-                  alt={`프로젝트 ${i + 1}`}
-                  src={src}
-                  fill
-                  sizes="360px"
-                  className="rounded-[20px] object-cover"
-                />
-              </div>
-            ))}
+
+        <ScrollIndicator />
+      </section>
+
+      <section id="about" className="relative flex h-[900px] w-full snap-start scroll-mt-[80px] flex-col items-center justify-center overflow-clip bg-[#080808]">
+        <AboutTimeline />
+      </section>
+
+      <section id="skills" className="relative flex h-[900px] w-full snap-start scroll-mt-[80px] flex-col items-center overflow-clip bg-[#080808]">
+        <div className="relative mx-auto h-full w-full max-w-[1440px]">
+          <div className="pointer-events-none absolute left-1/2 top-[592px] h-[113px] w-[2526px] -translate-x-1/2">
+            <Image alt="" src={glowSkills} fill sizes="2526px" />
+          </div>
+
+          <div className="absolute left-0 top-[467px] w-full">
+            <SkillsMarquee />
+          </div>
+
+          <div className="pointer-events-none absolute left-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-r from-[#080808] to-[rgba(8,8,8,0)]" />
+          <div className="pointer-events-none absolute right-0 top-[3px] h-[800px] w-[313px] bg-gradient-to-l from-[#080808] to-[rgba(8,8,8,0)]" />
+
+          <div className="absolute left-[98px] top-[140px] flex flex-col items-start gap-[20px] whitespace-nowrap text-white">
+            <p className="font-archivo-expanded text-[40px] font-bold">SKILLS</p>
+            <div className="font-roboto text-[16px] tracking-[-0.32px]" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <p>Lorem ipsum dolor sit amet, consectetuer</p>
+              <p>adipiscing elit, tincidunt ut laoreet aliquam</p>
+              <p>erat dolor sit volutpat.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="flex w-full flex-col items-center gap-[100px] py-[140px]">
-        <div className="flex w-full flex-col items-center gap-[48px]">
-          <p className="whitespace-nowrap font-pretendard text-[40px] font-bold text-[#0d5fe7]">
-            GOAL
-          </p>
-          <div className="w-full px-[98px] text-center font-pretendard text-[16px] font-medium leading-[1.55] tracking-[-0.32px] text-[#080808]">
-            <p>저의 목표는 사용자의 작은 불편까지 세심하게 발견하고, 이를 쉽고 편리한 경험으로 해결하는 프로덕트 디자이너가 되는 것입니다.</p>
-            <p>보기 좋은 화면을 만드는 것에 그치지 않고, 사용자가 자연스럽게 이해하고 행동할 수 있는 서비스를 설계하고 싶습니다.</p>
-            <p>다양한 프로젝트와 경험을 통해 꾸준히 배우며, 사람들에게 실질적인 도움을 주는 디자이너로 성장하고 싶어요.</p>
+      <section id="works" className="relative flex h-[900px] w-full snap-start scroll-mt-[80px] flex-col items-center justify-center overflow-clip bg-[#080808]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-full w-full max-w-[1440px]">
+          <div className="absolute left-1/2 bottom-[-462px] h-[924px] w-[2190px] -translate-x-1/2">
+            <Image alt="" src={glowWorks} fill sizes="2190px" />
           </div>
         </div>
-        <div className="relative flex w-full items-center justify-center gap-[64px] px-[98px]">
-          <div className="absolute left-1/2 top-[7px] h-0 w-[1220px] -translate-x-1/2">
-            <img alt="" src={timelineLine} className="block w-full" />
+        <WorksSection />
+      </section>
+
+      <section id="contact" className="relative flex h-[900px] w-full snap-start scroll-mt-[80px] flex-col items-center justify-center overflow-clip bg-[#080808]">
+        <div className="flex flex-col items-start gap-[60px]">
+          <div className="flex w-full flex-col items-start gap-[20px] whitespace-nowrap text-white">
+            <p className="font-archivo-expanded text-[40px] font-bold">CONTACT</p>
+            <div className="font-roboto text-[16px] tracking-[-0.32px]" style={{ fontVariationSettings: '"wdth" 100' }}>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
+              <p>tincidunt ut laoreet aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.</p>
+            </div>
           </div>
-          <div className="relative flex items-center gap-[64px]">
-            {goals.map((goal) => (
-              <div
-                key={goal.label}
-                className="flex flex-col items-center gap-[28px]"
-              >
-                <img alt="" src={timelineDot} className="block size-[16px]" />
-                <div className="flex flex-col items-center gap-[4px] whitespace-nowrap text-center font-suit text-[18px] font-semibold leading-[1.55] tracking-[-0.36px]">
-                  <p className="text-[#8a949e]">{goal.year}</p>
-                  <p className="text-[#080808]">{goal.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <form className="flex items-center gap-[24px]">
+            <div className="flex items-center gap-[12px]">
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-[200px] rounded-[100px] border border-white/50 bg-transparent px-[16px] py-[8px] font-roboto text-[16px] font-medium text-[rgba(188,211,251,0.9)] placeholder:text-[rgba(188,211,251,0.9)] focus:outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-[320px] rounded-[100px] border border-white/50 bg-transparent px-[16px] py-[8px] font-roboto text-[16px] font-medium text-[rgba(188,211,251,0.9)] placeholder:text-[rgba(188,211,251,0.9)] focus:outline-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="flex items-center justify-center whitespace-nowrap rounded-[40px] border border-[#6c97e3]/50 bg-gradient-to-r from-[rgba(156,192,255,0.2)] to-[rgba(101,155,246,0.2)] px-[20px] py-[8px] font-roboto text-[16px] font-medium text-white/50"
+            >
+              Send
+            </button>
+          </form>
         </div>
       </section>
 
-      <footer className="flex w-full flex-col items-start gap-[20px] bg-[#f4f5f6] py-[80px] pl-[189px] pr-[80px] opacity-80">
-        <div className="flex items-center gap-[20px]">
-          <p className="whitespace-nowrap font-pretendard text-[18px] font-bold text-[#0d5fe7]">
-            YOUNGSEO
-          </p>
-          <div className="flex items-center gap-[8px]">
-            <img alt="" src={socialIcon1} className="block size-[32px]" />
-            <img alt="" src={socialIcon2} className="block size-[32px]" />
+      <footer className="flex w-full flex-col items-start bg-[#0e1420] px-[98px] py-[80px]">
+        <div className="flex w-full items-start justify-between">
+          <div className="flex flex-col items-start gap-[40px] text-[16px] text-white/80">
+            <p className="whitespace-nowrap font-archivo font-bold">YOUNGSEOLEE</p>
+            <div className="w-[193px] font-pretendard leading-[1.6]">
+              {footerLinks.map((link) => (
+                <p key={link} className="underline decoration-solid [text-underline-position:from-font]">
+                  {link}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="flex w-full items-start gap-[350px] font-pretendard font-medium text-[#080808]">
-          <div className="w-[193px] text-[16px] leading-[1.6]">
-            <p className="underline decoration-solid [text-underline-position:from-font]">영서소개</p>
-            <p className="underline decoration-solid [text-underline-position:from-font]">이영서 가이드라인</p>
-            <p className="underline decoration-solid [text-underline-position:from-font]">이영서 회칙</p>
-          </div>
-          <div className="w-[389px] text-[14px] leading-[1.55]">
-            <p>이영서 | 서울특별시 동작구 상도로53길 8, 325동 606호</p>
-            <p>대표 이영서 | 전화 010-2628-3439 | 사업자등록번호 311-82-77953</p>
-            <p>개인정보처리방침 | 이용약관 | 규제정책</p>
-            <p>© 2026. 이영서 all Rights Reserved.</p>
+          <div className="flex flex-col items-start gap-[40px]">
+            <div className="flex items-center gap-[8px]">
+              <img alt="" src={socialIcon1} className="block size-[32px]" />
+              <img alt="" src={socialIcon2} className="block size-[32px]" />
+            </div>
+            <div className="font-pretendard text-[14px] leading-[1.55] text-white/80">
+              <p>이영서 | 서울특별시 동작구 상도로53길 8, 325동 606호</p>
+              <p>대표 이영서 | 전화 010-2628-3439 | 사업자등록번호 311-82-77953</p>
+              <p>개인정보처리방침 | 이용약관 | 규제정책</p>
+              <p>© 2026. 이영서 all Rights Reserved.</p>
+            </div>
           </div>
         </div>
       </footer>
