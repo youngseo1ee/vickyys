@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       <section id="skills" className="relative flex h-[900px] w-full snap-start scroll-mt-[80px] flex-col items-center overflow-clip bg-[#080808]">
-        <div className="relative mx-auto h-full w-full max-w-[1440px]">
+        <div className="relative mx-auto h-full w-full max-w-[1920px]">
           <div className="pointer-events-none absolute left-1/2 top-[592px] h-[113px] w-[2526px] -translate-x-1/2">
             <Image alt="" src={glowSkills} fill sizes="2526px" />
           </div>
